@@ -1,0 +1,25 @@
+var myArray = [2,7,3,9,2];
+
+var swap = function(array, indexa, indexb){
+      var temp = array[indexa];
+      array[indexa] = array[indexb];
+      array[indexb] = temp;
+}
+
+var sortElements = function(array, min, max) {
+
+    for(var i = array.length -1 ; i > 0 ; i--) {
+        if(array[i] >= min) {
+          if(array[i] < array[i-1]) {
+            swap(array, i, i-1)
+             sortElements(array, i-1, i)
+//             console.log(array);
+          }
+        }
+   
+    }
+    return array;
+}
+
+
+console.log(sortElements(myArray, 2, 9));
